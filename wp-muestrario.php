@@ -26,9 +26,8 @@ include_once(plugin_dir_path(__FILE__).'lib/shortcode-madera.php');
 include_once(plugin_dir_path(__FILE__).'lib/shortcode-materiales.php');
 
 
-
+//Llamada apra hacer rotar las imágenes de las laminas de madera
 add_action( 'wp_ajax_muestrario_rotar', 'wp_muestrario_rotar' );
-
 function wp_muestrario_rotar() {
   // File and rotation
   $urlparts = wp_parse_url(home_url());
@@ -39,8 +38,8 @@ function wp_muestrario_rotar() {
   header('Content-type: image/jpeg');
   $source = imagecreatefromjpeg($filename);
   $rotate = imagerotate($source, $degrees, 0);
-  imagejpeg($rotate);
   imagedestroy($source);
+  imagejpeg($rotate);
   imagedestroy($rotate);
 }
 

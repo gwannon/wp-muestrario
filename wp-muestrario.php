@@ -25,6 +25,10 @@ add_action('plugins_loaded', 'wp_muestrario_plugins_loaded', 0 );
 include_once(plugin_dir_path(__FILE__).'lib/shortcode-madera.php');
 include_once(plugin_dir_path(__FILE__).'lib/shortcode-materiales.php');
 
+remove_filter( 'the_content', 'wpautop' );
+add_filter( 'the_content', 'wpautop' , 99 );
+add_filter( 'the_content', 'shortcode_unautop', 100 );
+
 //Llamada para hacer rotar las imágenes de las laminas de madera
 add_action( 'wp_ajax_muestrario_rotar', 'wp_muestrario_rotar' );
 function wp_muestrario_rotar() {

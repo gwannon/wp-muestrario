@@ -19,11 +19,7 @@ function wp_muestrarios_madera_shortcode($params = array(), $content = null) {
   <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ); ?>../general.css" />
   <div class="swiper mySwiper swiper-h">
     <div class="swiper-wrapper">
-      <div class="swiper-slide mosaic">
-        <?php $counter = 1; foreach($swiper as $label => $slide) { ?>
-          <a href="#" data-goto="<?= $counter; ?><" style="background-image: url('<?= $slide['image']; ?>');"><?= $label; ?></a>
-        <?php $counter++; unset($swiper[$label]['image']); } ?>
-      </div>
+      <div class="swiper-slide mosaic"><?php $counter = 1; foreach($swiper as $label => $slide) { ?><a href="#" data-goto="<?= $counter; ?><" style="background-image: url('<?= $slide['image']; ?>');"><?= $label; ?></a><?php $counter++; unset($swiper[$label]['image']); } ?></div>
       <?php $swiper_count = 0; foreach($swiper as $slide) { 
         if (isset($slide['swiper'])) { $swiper_count++; ?>
           <div class="swiper-slide">

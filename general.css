@@ -118,18 +118,22 @@
 
 .muestra.half {
   height: calc(50% - 10px);
+  min-height: calc((var(--min-height) * 0.50) - 10px);
 }
 
 .muestra.third{
   height: calc(33.33% - 10px); 
+  min-height: calc((var(--min-height) * 0.3333) - 10px);
 }
 
 .muestra.quarter {
   height: calc(25% - 10px); 
+  min-height: calc((var(--min-height) * 0.25) - 10px);
 }
 
 .muestra.sixth {
   height: calc(16.66% - 10px); 
+  min-height: calc((var(--min-height) * 0.1666) - 10px);
 }
 
 #popup {

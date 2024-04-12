@@ -14,9 +14,7 @@ function wp_muestrarios_madera_shortcode($params = array(), $content = null) {
     } else if(count($item) == 4) {
       $swiper[$item[0]]['swiper'][$item[1]][$item[3]] = $item[2];
     }
-  } 
- 
-  ?>
+  } ?>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="<?php echo plugin_dir_url( __FILE__ ); ?>../general.css" />
   <div class="swiper mySwiper swiper-h">
@@ -38,8 +36,10 @@ function wp_muestrarios_madera_shortcode($params = array(), $content = null) {
                 </div>
                 <?php
                 foreach($slide['swiper'] as $subslide) { 
-                  if(count($subslide) > 8) $class = " third";
-                  else if(count($subslide) > 4) $class = " half";
+                  if(count($slide) > 16) $class = " sixth";
+                  else if(count($slide) > 12) $class = " quarter";
+                  else if(count($slide) > 8) $class = " third";
+                  else if(count($slide) > 4) $class = " half";
                   else $class = ""; ?>
                   <div class="swiper-slide muestrario">
                     <?php foreach($subslide as $name => $image) { ?>
@@ -51,7 +51,9 @@ function wp_muestrarios_madera_shortcode($params = array(), $content = null) {
             </div>
           </div>
         <?php } else {
-          if(count($slide) > 8) $class = " third";
+          if(count($slide) > 16) $class = " sixth";
+          else if(count($slide) > 12) $class = " quarter";
+          else if(count($slide) > 8) $class = " third";
           else if(count($slide) > 4) $class = " half";
           else $class = ""; ?>
           <div class="swiper-slide muestrario">
@@ -80,7 +82,7 @@ function wp_muestrarios_madera_shortcode($params = array(), $content = null) {
         });
       }
     </script>
-  <?php } 
+  <?php }
 return ob_get_clean();
 }
 add_shortcode('muestrarios-madera', 'wp_muestrarios_madera_shortcode');

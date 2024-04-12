@@ -25,14 +25,12 @@ add_action('plugins_loaded', 'wp_muestrario_plugins_loaded', 0 );
 include_once(plugin_dir_path(__FILE__).'lib/shortcode-madera.php');
 include_once(plugin_dir_path(__FILE__).'lib/shortcode-materiales.php');
 
-
-//Llamada apra hacer rotar las imágenes de las laminas de madera
+//Llamada para hacer rotar las imágenes de las laminas de madera
 add_action( 'wp_ajax_muestrario_rotar', 'wp_muestrario_rotar' );
 function wp_muestrario_rotar() {
   // File and rotation
   $urlparts = wp_parse_url(home_url());
   $domain = $urlparts['scheme']."://".$urlparts['host'];
-  //print_r($urlparts); die;
   $filename = $domain.str_replace($domain, "", $_REQUEST['image']);
   $degrees = 90;
   header('Content-type: image/jpeg');
@@ -42,4 +40,3 @@ function wp_muestrario_rotar() {
   imagejpeg($rotate);
   imagedestroy($rotate);
 }
-

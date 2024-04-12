@@ -3,13 +3,13 @@
 /**
  * Plugin Name: WP Muestrario
  * Plugin URI:  https://github.com/gwannon/wp-muestrario
- * Description: Plugin de de WordPress para generar una muestrario de materiales
+ * Description: Plugin de WordPress para generar una muestrario de materiales
  * Version:     1.0
  * Author:      Gwannon
  * Author URI:  https://github.com/gwannon/
  * License:     GNU General Public License v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: wp_muestrario
+ * Text Domain: wp-muestrario
  *
  * PHP 7.3
  * WordPress 6.1.1

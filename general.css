@@ -223,6 +223,9 @@
   display: none;
 }
 
+#popup img { cursor: grab;}
+#popup.active img { cursor: grabbing;}
+
 #returnhome {
   position: absolute;
   bottom: 0px;

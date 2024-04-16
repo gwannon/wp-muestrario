@@ -14,20 +14,22 @@ jQuery('.muestra').click(function() {
   jQuery("#popup").css('background-image', 'url('+bg+')');
   jQuery("#popup").append("<img src='"+bg+"'>");
   jQuery("#popup").fadeIn();
+  jQuery("#controls").fadeIn();
 });
 
-jQuery('#popup i.close').click(function() {
+jQuery('#controls span.close').click(function() {
   jQuery("#popup").fadeOut();
+  jQuery("#controls").fadeOut();
   jQuery('#popup img').remove(); 
   jQuery('#popup').removeClass("zoom"); 
   jQuery("#popup").css('background-image', 'none');
 });
 
-jQuery('#popup i.zoom.in').click(function() {
+jQuery('#controls span.zoom.in').click(function() {
   jQuery('#popup').removeClass("zoom"); 
 });
 
-jQuery('#popup i.zoom.out').click(function() {
+jQuery('#controls span.zoom.out').click(function() {
   jQuery('#popup').addClass("zoom"); 
 });
 

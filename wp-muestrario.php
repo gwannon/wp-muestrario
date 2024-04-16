@@ -31,6 +31,7 @@ add_filter( 'the_content', 'shortcode_unautop', 100 );
 
 //Llamada para hacer rotar las imágenes de las laminas de madera
 add_action( 'wp_ajax_muestrario_rotar', 'wp_muestrario_rotar' );
+add_action( 'wp_ajax_nopriv_muestrario_rotar', 'wp_muestrario_rotar' );
 function wp_muestrario_rotar() {
   // File and rotation
   $urlparts = wp_parse_url(home_url());

@@ -159,12 +159,20 @@
 #popup.nozoom {
   background-image: none !important;
 }
-
-#popup.nozoom i.zoom:is(.in, .out) {
+#controls {
+  position: absolute;
+  z-index: 3000;
+  top: 0px;
+  width: 100%;
+  background-color: red;
   display: none;
 }
 
-#popup i.close {
+/*#controls.nozoom span.zoom:is(.in, .out) {
+  display: none;
+}*/
+
+#controls span.close {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -176,7 +184,7 @@
   font-size: 30px;
 }
 
-#popup i.zoom {
+#controls span.zoom {
   position: absolute;
   top: 10px;
   right: 30px;
@@ -188,7 +196,7 @@
   font-size: 30px;
 }
 
-#popup i.zoom.out {
+#controls span.zoom.out {
   right: 70px;
 }
 
@@ -196,13 +204,13 @@
   #popup {
     left: calc(50vw - 250px);
   }
-  #popup i.close  {
+  #popup span.close  {
     left: calc(50vw - 240px);
   }
-  #popup i.zoom  {
+  #popup span.zoom  {
     right: calc(50vw - 220px);
   }
-  #popup i.zoom.out  {
+  #popup span.zoom.out  {
     right: calc(50vw - 180px);
   }
 }*/

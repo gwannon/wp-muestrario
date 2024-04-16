@@ -66,7 +66,10 @@ function wp_muestrarios_materiales_shortcode($params = array(), $content = null)
         <?php } ?>
       <?php }?>
     </div>
-    <div id="popup" class="nozoom"><i class="close">&#x292B;</i><i class="zoom out">&#x2212;</i><i class="zoom in">+</i></div>
+    <div id="popup" class="nozoom"></div>
+    <div id="controls">
+      <span class="close">&#x292B;</span><!-- <span class="zoom out">&#x2212;</span><span class="zoom in">+</span> -->
+    </div>
     <div id="returnhome"><?php _e("Volver", "wp-muestrario"); ?></div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

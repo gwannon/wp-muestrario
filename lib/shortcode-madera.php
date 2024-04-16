@@ -60,7 +60,10 @@ function wp_muestrarios_madera_shortcode($params = array(), $content = null) {
         <?php } ?>
       <?php }?>
     </div>
-    <div id="popup"><i class="close">&#x292B;</i><i class="zoom out">&#x2212;</i><i class="zoom in">+</i></div>
+    <div id="popup"></div>
+    <div id="controls">
+      <span class="close">&#x292B;</span><span class="zoom out">&#x2212;</span><span class="zoom in">+</span>
+    </div>
     <div id="returnhome"><?php _e("Volver", "wp-muestrario"); ?></div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

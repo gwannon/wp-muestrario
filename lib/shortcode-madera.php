@@ -77,7 +77,46 @@ function wp_muestrarios_madera_shortcode($params = array(), $content = null) {
           swiper[1].slideTo((jQuery(this).data("goto")));
         });
       }
+
+
+    //Draggable del popup en vez de tener que usar scroll
+    const slider = document.querySelector('#popup');
+		let isDown = false;
+		let startY;
+		let scrollTop;
+
+		slider.addEventListener('mousedown', (e) => {
+			isDown = true;
+			slider.classList.add('active');
+			startY = e.pageY - slider.offsetTop;
+			scrollTop = slider.scrollTop;
+		});
+		slider.addEventListener('mouseleave', () => {
+			isDown = false;
+			slider.classList.remove('active');
+		});
+		slider.addEventListener('mouseup', () => {
+			isDown = false;
+			slider.classList.remove('active');
+		});
+		slider.addEventListener('mousemove', (e) => {
+			if(!isDown) return;
+			e.preventDefault();
+			const y = e.pageY - slider.offsetTop;
+			const walk = (y - startY) * 3; //scroll-fast
+			slider.scrollTop = scrollTop - walk;
+			console.log(walk);
+		});
     </script>
+    <style>
+      #popup img {
+        cursor: grab;
+      }
+      
+      #popup.active img {
+        cursor: grabbing;
+      }
+    </style>
   <?php }
 return ob_get_clean();
 }

@@ -3,7 +3,8 @@ swiper[0] = new Swiper(".mySwiper", {
   spaceBetween: 0,
 });
 
-jQuery('.mySwiper .mosaic > a').click(swiper,function(){
+jQuery('.mySwiper .mosaic > a').click(function(e){
+  e.preventDefault();
   swiper[0].slideTo((jQuery(this).data("goto")));
 });
 

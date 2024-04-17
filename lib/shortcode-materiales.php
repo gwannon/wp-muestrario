@@ -21,7 +21,7 @@ function wp_muestrarios_materiales_shortcode($params = array(), $content = null)
     <div class="swiper-wrapper">
       <div class="swiper-slide mosaic">
         <?php $counter = 1; foreach($swiper as $label => $slide) { ?>
-          <a href="#" class="circle" data-goto="<?= $counter; ?><" style="background-image: url('<?= $slide['image']; ?>');"><?= $label; ?></a>
+          <a href="" class="circle" data-goto="<?= $counter; ?><" style="background-image: url('<?= $slide['image']; ?>');"><?= $label; ?></a>
         <?php $counter++; unset($swiper[$label]['image']); } ?>
       </div>
       <?php $swiper_count = 0; foreach($swiper as $slide) { 
@@ -31,7 +31,7 @@ function wp_muestrarios_materiales_shortcode($params = array(), $content = null)
               <div class="swiper-wrapper">
                 <div class="swiper-slide menumosaic">
                   <?php $counter = 1; foreach($slide['swiper'] as $label => $image) { ?>
-                    <a href="#" class="circle" data-goto="<?= $counter; ?><" style="background-image: url('<?= reset($image); ?>');"><?= $label; ?></a>
+                    <a href="" class="circle" data-goto="<?= $counter; ?><" style="background-image: url('<?= reset($image); ?>');"><?= $label; ?></a>
                   <?php $counter++; } ?>
                 </div>
                 <?php
@@ -82,7 +82,8 @@ function wp_muestrarios_materiales_shortcode($params = array(), $content = null)
           spaceBetween: 0,
         });
 
-        jQuery('.mySwiper'+i+' .menumosaic a[data-goto]').click(swiper,function(){
+        jQuery('.mySwiper'+i+' .menumosaic a[data-goto]').click(function(e){
+          e.preventDefault();
           swiper[1].slideTo((jQuery(this).data("goto")));
         });
       }

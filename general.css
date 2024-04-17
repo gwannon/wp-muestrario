@@ -1,9 +1,9 @@
 .swiper {
-  --min-height: 500px;
+  --min-height: 600px;
   width: 100%;
-  max-width: 500px;
+  max-width: var(--min-height);
   height: 100%;
-  max-height: 500px; 
+  max-height: var(--min-height); 
 }
 
 .swiper-slide {
@@ -139,7 +139,7 @@
 #popup {
   display: none;
   position: absolute;
-  max-width: 500px;
+  max-width: 100%;
   height: 100%;
   max-height: var(--min-height); 
   overflow: auto;
@@ -174,30 +174,30 @@
 
 #controls span.close {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 20px;
+  left: 20px;
   z-index: 20;
   font-style: normal;
   cursor: pointer;
   color: #fff;
   text-shadow: 0px 0px 9px #000;
-  font-size: 30px;
+  font-size: 48px;
 }
 
 #controls span.zoom {
   position: absolute;
-  top: 10px;
+  top: 25px;
   right: 30px;
   z-index: 20;
   font-style: normal;
   cursor: pointer;
   color: #fff;
   text-shadow: 0px 0px 9px #000;
-  font-size: 30px;
+  font-size: 48px;
 }
 
 #controls span.zoom.out {
-  right: 70px;
+  right: 100px;
 }
 
 /*@media (min-width: 500px) {

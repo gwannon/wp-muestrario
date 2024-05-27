@@ -22,8 +22,10 @@ function wp_muestrario_plugins_loaded() {
 add_action('plugins_loaded', 'wp_muestrario_plugins_loaded', 0 );
 
 /* ----------- Includes ------------ */
-include_once(plugin_dir_path(__FILE__).'lib/shortcode-madera.php');
-include_once(plugin_dir_path(__FILE__).'lib/shortcode-materiales.php');
+include_once(plugin_dir_path(__FILE__).'lib/shortcode-madera-multicapa.php');
+include_once(plugin_dir_path(__FILE__).'lib/shortcode-madera-maciza.php');
+include_once(plugin_dir_path(__FILE__).'lib/shortcode-panelex.php');
+include_once(plugin_dir_path(__FILE__).'lib/shortcode-laminados.php');
 
 remove_filter( 'the_content', 'wpautop' );
 add_filter( 'the_content', 'wpautop' , 99 );

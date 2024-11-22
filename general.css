@@ -47,9 +47,27 @@
 }
 
 .mosaic > a.circle {
-  width: calc(50% - 10px);
-  height: calc(33% - 10px);
+  width: calc(50% - 67px);
+  height: calc(33% - 46px);
   background-size: cover;
+}
+
+.muestrario-laminados {
+
+}
+
+.muestrario-laminados .mosaic > a.circle {
+  border-radius: 50%;
+  max-width: 188px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.muestrario-laminados .mosaic > a.circle span {
+  position: absolute;
+  bottom: -24px;
+  color: #109bc5;
+  text-shadow: none;
 }
 
 .menumosaic {
@@ -86,7 +104,9 @@
   background: #ffffff none center center no-repeat;
   background-size: cover;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .muestra {

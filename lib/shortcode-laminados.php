@@ -9,7 +9,7 @@ function wp_muestrarios_laminados_shortcode($params = array(), $content = null) 
 	<div id="popUpSwiper"><span>×</span><div class="swiper mySwiper swiper-h muestrario-laminados">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide mosaic">
-					<a href="#" class="circle" data-goto="1" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/Color/dermacolor.jpg');"><span>Color</span></a><a href="#" class="circle" data-goto="2" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/Texturas/BRUSHED.png');"><span>Texturas</span></a><a href="#" class="circle" data-goto="3" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/RealWood/timber.jpg');"><span>RealWood</span></a><a href="#" class="circle" data-goto="4" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/TekStur/DYNAMIC.jpg');"><span>TekStur</span></a><a href="#" class="circle" data-goto="5" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/Metalicos/2038-COPPER-BRUSHED.jpg');"><span>Metálicos</span></a><a class="circle"></a>
+					<a href="#" class="circle" data-goto="1" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/Color/dermacolor.jpg');"><span>Color</span></a><a href="#" class="circle" data-goto="2" style="background-image: url('/wp-content/uploads/TEXTURAS.jpg');"><span>Texturas</span></a><a href="#" class="circle" data-goto="3" style="background-image: url('/wp-content/uploads/REAL-WOOD.jpg');"><span>RealWood</span></a><a href="#" class="circle" data-goto="4" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/TekStur/DYNAMIC.jpg');"><span>TekStur</span></a><a href="#" class="circle" data-goto="5" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/Metalicos/2038-COPPER-BRUSHED.jpg');"><span>Metálicos</span></a><a class="circle"></a>
 				</div>
 				<div class="swiper-slide">
 					<div class="swiper mySwiper1 swiper-v">
@@ -137,7 +137,7 @@ function wp_muestrarios_laminados_shortcode($params = array(), $content = null) 
 				jQuery("#popUpSwiperBg").addClass("open");
 			}
 		});
-		jQuery(".mini-menu-swiper a").click(swiper,function(e){
+		jQuery(".mini-menu-swiper a[data-goto]").click(swiper,function(e){
 			e.preventDefault();
 			jQuery("#popUpSwiper").toggleClass("open");
 			jQuery("#popUpSwiperBg").toggleClass("open");
@@ -149,7 +149,7 @@ function wp_muestrarios_laminados_shortcode($params = array(), $content = null) 
 		#popUpSwiper {
 			display: none;
 			position: fixed;
-			top: 150px;
+			top: 195px;
 			left: calc(50% - 219px);
 			z-index: 510;
 			max-width: 438px;
@@ -197,10 +197,11 @@ function wp_muestrarios_laminados_mini_shortcode($params = array(), $content = n
   ob_start(); ?>
 	<div class="mini-menu-swiper">
 		<a href="#" data-goto="1" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/Color/dermacolor.jpg');"><span>Color</span></a>
-		<a href="#" data-goto="2" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/Texturas/BRUSHED.png');"><span>Texturas</span></a>
-		<a href="#" data-goto="3" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/RealWood/timber.jpg');"><span>RealWood</span></a>
+		<a href="#" data-goto="2" style="background-image: url('/wp-content/uploads/TEXTURAS.jpg');"><span>Texturas</span></a>
+		<a href="#" data-goto="3" style="background-image: url('/wp-content/uploads/REAL-WOOD.jpg');"><span>RealWood</span></a>
 		<a href="#" data-goto="4" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/TekStur/DYNAMIC.jpg');"><span>TekStur</span></a>
 		<a href="#" data-goto="5" style="background-image: url('/wp-content/plugins/wp-muestrario/laminados/Metalicos/2038-COPPER-BRUSHED.jpg');"><span>Metálicos</span></a>
+		<a href="/materiales/revestimientos/laminado_compacto/laminado-digital/" style="background-image: url('/wp-content/uploads/DIGITAL.jpg');"><span>Digital</span></a>
 	</div>
 	<style>
 		.mini-menu-swiper {
@@ -224,8 +225,15 @@ function wp_muestrarios_laminados_mini_shortcode($params = array(), $content = n
 		}
 
 		@media (min-width: 800px) {
+			.mini-menu-swiper a {
+				width: 100px;
+				height: 100px;
+			}
+		}
 
-				.mini-menu-swiper a {
+		@media (min-width: 1065px) {
+
+			.mini-menu-swiper a {
 				width: 150px;
 				height: 150px;
 			}

@@ -6,6 +6,15 @@
   max-height: var(--min-height); 
 }
 
+.muestrario-laminados.swiper {
+  --min-height: 566px;
+  width: 100%;
+  max-width: var(--min-height);
+  height: 100%;
+  max-height: var(--min-height); 
+}
+
+
 .swiper-slide {
   text-align: center;
   font-size: 15px;
@@ -47,8 +56,8 @@
 }
 
 .mosaic > a.circle {
-  width: calc(50% - 67px);
-  height: calc(33% - 46px);
+  width: calc(50% - 71px);
+  height: calc(33% - 50px);
   background-size: cover;
 }
 
